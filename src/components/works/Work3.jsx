@@ -2,71 +2,88 @@
 
 import styled from "styled-components";
 import { data } from "../../mockData";
-import HorizontalScroll from "react-scroll-horizontal";
 
 const Section = styled.div`
   top: 0px;
   left: 0px;
+  width: 100vw;
+  height: 100vh;
   position: absolute;
   height: 100vh;
   display: flex;
+  background-color: #f0ead6;
+  overflow: hidden;
 `;
 
 const Image = styled.img`
-  margin-top: 10vh;
-  height: 80vh;
-
+  position: absolute;
+  top: 0px;
+  height: 95vh;
+  width: 83.3vw;
+  right: 0px;
   object-fit: cover;
-  object-position: 100% center;
 `;
 
 const Container = styled.div`
-  height: 100vh;
-  width: 150vw;
-  display: flex;
-  transform: translate(-32%, 0%);
+  overflow: hidden;
 `;
 
 const Left = styled.div`
-  text-align: left;
+  width: 16.7vw;
   height: 100vh;
-  width: 50vw;
+  border: gray 0.1px solid;
 `;
 
-const Right = styled.div`
-  height: 100vh;
-`;
+const Right = styled.div``;
 
-const Title = styled.div`
-  margin-top: 20vh;
-`;
+const Title = styled.div``;
 const Father = styled.div``;
 
-const Work3 = () => {
-  const child = { width: `100%vw`, height: `100%` };
-  const parent = { width: `100vw`, height: `100%` };
+const Footer = styled.div`
+  position: absolute;
+  border: gray 0.1px solid;
+  border-left-width: 0px;
+  width: 83.3vw;
+  height: 45px;
+  bottom: 0px;
+  right: 0px;
+  overflow: hidden;
+`;
 
+const Square = styled.a`
+  position: absolute;
+  width: 16.7vw;
+  height: 45px;
+  bottom: 0px;
+  left: 0px;
+  border: gray 0.1px solid;
+`;
+
+const Work3 = () => {
   return (
     <Section>
-      <Father style={parent}>
-        <HorizontalScroll reverseScroll={true} animValues={100}>
-          <Container style={child} id={data[2].id}>
-            <Left>
-              <Title>
-                <h1>TOKYO GHOUL</h1>
-                <h1>Kaneki ke3</h1>
-              </Title>
-            </Left>
-            <div className="h-[100vh]">
-              <Image className="" src={data[2].img} draggable="false" />
-            </div>
-            <Right>
-              <a href="">
-                <button>next</button>
-              </a>
-            </Right>
-          </Container>
-        </HorizontalScroll>
+      <Father>
+        <Container>
+          <Left>
+            <Title className="rotate-[300grad]">
+              <h1 className="mt-[300px] text-gray-500 w-[200px]">金木 研</h1>
+            </Title>
+
+            <Square
+              className=" hover:bg-gray-900  ease-in-out duration-300"
+              href="/"
+            >
+              <h1 className=" w-[100%] h-[100%] text-gray-500 text-[40px] hover:text-gray-100 ease-in-out duration-300">
+                CLOSE
+              </h1>
+            </Square>
+          </Left>
+          <div className="overflow-hidden">
+            <Image className="" src={data[2].img} draggable="false" />
+          </div>
+          <Right></Right>
+          <Footer></Footer>
+        </Container>
       </Father>
     </Section>
   );

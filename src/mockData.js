@@ -43,6 +43,5 @@
         id:11,
         img:"/Ishida11.png",
     },
-
 ]
 

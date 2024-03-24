@@ -59,7 +59,7 @@ const Square = styled.a`
   border: gray 0.1px solid;
 `;
 
-const Work1 = () => {
+const Work4 = () => {
   return (
     <Section>
       <Father>
@@ -79,7 +79,7 @@ const Work1 = () => {
             </Square>
           </Left>
           <div className="overflow-hidden">
-            <Image className="" src={data[0].img} draggable="false" />
+            <Image className="" src={data[3].img} draggable="false" />
           </div>
           <Right></Right>
           <Footer></Footer>
@@ -89,4 +89,4 @@ const Work1 = () => {
   );
 };
 
-export default Work1;
+export default Work4;

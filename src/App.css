@@ -26,6 +26,21 @@
   }
 }
 
+@keyframes loading {
+  0% {
+    opacity: 0;
+    z-index: -1;
+  }
+  1% {
+    opacity: 100%;
+    z-index: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;

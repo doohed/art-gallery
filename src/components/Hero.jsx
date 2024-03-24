@@ -3,8 +3,8 @@ import Track from "./Track";
 import { useState } from "react";
 
 const Container = styled.div`
-overflow: hidden;
-height: 90vh;
+  overflow: hidden;
+  height: 90vh;
 `;
 
 const Title = styled.div`
@@ -33,10 +33,8 @@ const Menu = styled.a`
 `;
 
 const Hero = () => {
-  
-
   return (
-    <Container className="text-left hide show" id="index">
+    <Container className="text-left" id="index">
       <Title>
         <h1>SUI ISHIDA</h1>
         <h1>石田 スイ</h1>
