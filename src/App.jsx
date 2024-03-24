@@ -3,9 +3,9 @@ import "./App.css";
 import Hero from "./components/Hero";
 import Work from "./components/Work";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Work1 from "./components/works/work1";
-import Work2 from "./components/works/work2";
-import Work3 from "./components/works/work3";
+import Work1 from "./components/works/Work1";
+import Work2 from "./components/works/Work2";
+import Work3 from "./components/works/Work3";
 
 const Container = styled.div`
   overflow-x: hidden;
