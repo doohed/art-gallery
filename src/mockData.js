@@ -1,0 +1,48 @@
+ export const data = [
+    {
+        id:1,
+        img:"/Ishida1.png",
+    },
+    {
+        id:2,
+        img:"Ishida2.png",
+    },
+    {
+        id:3,
+        img:"/Ishida3.png",
+    },
+    {
+        id:4,
+        img:"/Ishida4.png",
+    },
+    {
+        id:5,
+        img:"/Ishida5.png",
+    },
+    {
+        id:6,
+        img:"/Ishida6.png",
+    },
+    {
+        id:7,
+        img:"/Ishida7.png",
+    },
+    {
+        id:8,
+        img:"/Ishida8.png",
+    },
+    {
+        id:9,
+        img:"/Ishida9.png",
+    },
+    {
+        id:10,
+        img:"/Ishida10.png",
+    },
+    {
+        id:11,
+        img:"/Ishida11.png",
+    },
+
+]
+
