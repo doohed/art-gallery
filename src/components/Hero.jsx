@@ -11,7 +11,7 @@ const Title = styled.div`
   text-align: left;
   margin-left: 80px;
   margin-bottom: 15px;
-  margin-top: 10vh;
+  margin-top: 15vh;
   user-select: none;
 `;
 
@@ -34,38 +34,32 @@ const Menu = styled.a`
 `;
 
 const Hero = () => {
-
-  const [cord,setCord] = useState(null);
-  const [x,setX] = useState (null);
+  const [cord, setCord] = useState(null);
+  const [x, setX] = useState(null);
   const [percentage, setPercentage] = useState(null);
-
 
   const elementRef = useRef(null);
   const handleMouseMove = (e) => {
-    setCord(e.clientX);
+    setCord(e.clientX - 33);
     setX(document.querySelector(".box").clientWidth);
-    setPercentage((((cord / x) * 100 )*2) | 0);
-    // console.log(elementRef.current.scrollLeft);
-    console.log(percentage);
-    // document.getElementById("container").scrollLeft = percentage;
+    setPercentage(((cord / x) * 100) | 0);
     document.getElementById(
       "box"
     ).style.transform = `translate(-${percentage}vw,0%)`;
   };
 
   return (
-    <Container onMouseMove={handleMouseMove} className="text-left">
+    <Container onMouseMove={handleMouseMove} className="text-left box">
       <Title>
-        <h1>SUI ISHIDA</h1>
+        
         <h1>石田 スイ</h1>
-        <h1 className="ml-14">PORTAFOLIO</h1>
+        <h1 className="ml-14">GALLERY</h1>
       </Title>
       <Images id="container" ref={elementRef}>
         <Track />
       </Images>
       <div className="flex">
         <h2 className="text-5xl mt-5 ml-20 select-none">漫画家</h2>
-        <h4 className="absolute animate-pulse">SCROLL</h4>
       </div>
       <div className="select-none w-fit rotate-[270deg] mt-[90px] ml-[-20px]">
         <Menu className="ease-in-out duration-300">MENU</Menu>
@@ -73,6 +67,5 @@ const Hero = () => {
     </Container>
   );
 };
-
 
 export default Hero;

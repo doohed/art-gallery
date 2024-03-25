@@ -6,10 +6,10 @@ import { useRef } from "react";
 
 const Images = styled.div`
   display: flex;
-  margin-left: 0vw;
+  margin-left: 2vw;
   gap: 1vmin;
   top: 0px;
-  width: 200vw;
+  width: 190vw;
   height: 100%;
   overflow: hidden;
   user-select: none;
@@ -28,9 +28,9 @@ const Track = () => {
   
 
   return (
-    <Images className="box  ease-in duration-[1s]" id="box" >
+    <Images className=" ease-out duration-[1s]" id="box" >
       {data.map((item) => (
-        <a href={`work/${item.id}`}>
+        <a href={`work/${item.id}`} draggable="false">
           <Image
             className="hover:grayscale-0 hover:scale-125 ease-in-out duration-500"
             src={item.img}
