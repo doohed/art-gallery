@@ -42,12 +42,19 @@ const Title = styled.div`
 const Father = styled.div``;
 
 const Work = () => {
-  const child = { width: `100%vw`, height: `100%` };
-  const parent = { width: `100vw`, height: `100%` };
+
 
   return (
     <Section>
-      works
+      <Title>
+
+      </Title>
+      <Left>
+
+      </Left>
+      <Right>
+        
+      </Right>
     </Section>
   );
 };

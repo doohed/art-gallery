@@ -1,10 +1,11 @@
 import styled, { useTheme } from "styled-components";
 import Track from "./Track";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const Container = styled.div`
   overflow: hidden;
   height: 90vh;
+  filter: opacity(0);
 `;
 
 const Title = styled.div`
@@ -25,12 +26,13 @@ const Images = styled.div`
   overflow-x: hidden;
 `;
 
-const Menu = styled.a`
+const Link = styled.a`
+position: absolute;
   cursor: pointer;
-  color: white;
-  &:hover {
-    color: gray;
-  }
+  rotate: 270deg;
+  left: 0px;
+  bottom: 5vh;
+
 `;
 
 const Hero = () => {
@@ -39,6 +41,9 @@ const Hero = () => {
   const [percentage, setPercentage] = useState(null);
 
   const elementRef = useRef(null);
+
+  useEffect(() => {}, []);
+
   const handleMouseMove = (e) => {
     setCord(e.clientX - 33);
     setX(document.querySelector(".box").clientWidth);
@@ -48,10 +53,18 @@ const Hero = () => {
     ).style.transform = `translate(-${percentage}vw,0%)`;
   };
 
+  function open() {
+    document.querySelector("#menu").classList.add("show");
+    document.querySelector("#hero").classList.remove("show");
+  }
+
   return (
-    <Container onMouseMove={handleMouseMove} className="text-left box">
+    <Container
+    id="hero"
+      onMouseMove={handleMouseMove}
+      className=" hide show text-left box ease-in-out duration-300"
+    >
       <Title>
-        
         <h1>石田 スイ</h1>
         <h1 className="ml-14">GALLERY</h1>
       </Title>
@@ -61,9 +74,10 @@ const Hero = () => {
       <div className="flex">
         <h2 className="text-5xl mt-5 ml-20 select-none">漫画家</h2>
       </div>
-      <div className="select-none w-fit rotate-[270deg] mt-[90px] ml-[-20px]">
-        <Menu className="ease-in-out duration-300">MENU</Menu>
-      </div>
+
+      <Link onClick={open} className="ease-in-out duration-300">
+        <h2>MENU</h2>
+      </Link>
     </Container>
   );
 };
