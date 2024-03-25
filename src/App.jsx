@@ -19,17 +19,6 @@ const Container = styled.div`
   overflow-x: hidden;
 `;
 
-const Loading = styled.div`
-position: absolute;
-width: 100vw;
-height: 100vh;
-top: 0px;
-left: 0px;
-background-color: #000000;
-overflow-x: hidden;
-z-index: -1;
-animation: loading 1s;
-`;
 function App() {
   const router = createBrowserRouter([
     {
@@ -89,7 +78,6 @@ function App() {
   return (
     <>
       <Container>
-        <Loading/>
         <RouterProvider router={router} />
       </Container>
     </>

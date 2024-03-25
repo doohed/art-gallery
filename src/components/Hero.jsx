@@ -43,7 +43,10 @@ const Hero = () => {
       <Images>
         <Track />
       </Images>
-      <h2 className="text-5xl mt-5 ml-20 select-none">漫画家</h2>
+      <div className="flex">
+        <h2 className="text-5xl mt-5 ml-20 select-none">漫画家</h2>
+        <h4 className="absolute animate-pulse">SCROLL</h4>
+      </div>
       <div className="select-none w-fit rotate-[270deg] mt-[90px] ml-[-20px]">
         <Menu className="ease-in-out duration-300">MENU</Menu>
       </div>
