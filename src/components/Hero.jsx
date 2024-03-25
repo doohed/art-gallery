@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import Track from "./Track";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const Container = styled.div`
   overflow: hidden;
@@ -21,7 +21,8 @@ const Images = styled.div`
   height: 32.3vh;
   width: 100%;
   margin: 0rem;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
 `;
 
 const Menu = styled.a`
@@ -33,14 +34,33 @@ const Menu = styled.a`
 `;
 
 const Hero = () => {
+
+  const [cord,setCord] = useState(null);
+  const [x,setX] = useState (null);
+  const [percentage, setPercentage] = useState(null);
+
+
+  const elementRef = useRef(null);
+  const handleMouseMove = (e) => {
+    setCord(e.clientX);
+    setX(document.querySelector(".box").clientWidth);
+    setPercentage((((cord / x) * 100 )*2) | 0);
+    // console.log(elementRef.current.scrollLeft);
+    console.log(percentage);
+    // document.getElementById("container").scrollLeft = percentage;
+    document.getElementById(
+      "box"
+    ).style.transform = `translate(-${percentage}vw,0%)`;
+  };
+
   return (
-    <Container className="text-left" id="index">
+    <Container onMouseMove={handleMouseMove} className="text-left">
       <Title>
         <h1>SUI ISHIDA</h1>
         <h1>石田 スイ</h1>
         <h1 className="ml-14">PORTAFOLIO</h1>
       </Title>
-      <Images>
+      <Images id="container" ref={elementRef}>
         <Track />
       </Images>
       <div className="flex">
@@ -53,5 +73,6 @@ const Hero = () => {
     </Container>
   );
 };
+
 
 export default Hero;

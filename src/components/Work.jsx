@@ -2,8 +2,6 @@
 
 import styled from "styled-components";
 import { data } from "../mockData";
-import HorizontalScroll from "react-scroll-horizontal";
-import { useEffect, useState } from "react";
 
 const Section = styled.div`
   top: 0px;

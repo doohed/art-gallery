@@ -3,6 +3,7 @@ import "./App.css";
 import Hero from "./components/Hero";
 import Work from "./components/Work";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+
 import Work1 from "./components/works/Work1";
 import Work2 from "./components/works/Work2";
 import Work3 from "./components/works/Work3";
@@ -55,7 +56,7 @@ function App() {
     },
     {
       path: "work/7",
-      element: <Work7/>,
+      element: <Work7 />,
     },
     {
       path: "work/8",
@@ -63,7 +64,7 @@ function App() {
     },
     {
       path: "work/9",
-      element: <Work9/>,
+      element: <Work9 />,
     },
     {
       path: "work/10",

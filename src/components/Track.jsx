@@ -2,15 +2,16 @@
 
 import styled from "styled-components";
 import { data } from "../mockData";
-import HorizontalScroll from "react-scroll-horizontal";
-import { useState } from "react";
+import { useRef } from "react";
 
 const Images = styled.div`
   display: flex;
+  margin-left: 0vw;
   gap: 1vmin;
   top: 0px;
-  width: 100%;
+  width: 200vw;
   height: 100%;
+  overflow: hidden;
   user-select: none;
 `;
 
@@ -24,44 +25,19 @@ const Image = styled.img`
 `;
 
 const Track = () => {
-  const child = { width: `40vmin`, height: `100%` };
-  const parent = { width: `100vw`, height: `100%` };
-
-  // const [isClicked, setIsClicked] = useState(false);
-
-  // function Index() {
-  //   if (isClicked === true) {
-  //     document.querySelector("#index").classList.add("show");
-  //     setIsClicked(false);
-  //   } else {
-  //     document.querySelector("#index").classList.remove("show");
-  //     setIsClicked(true);
-  //   }
-  // }
-
-  // function Works() {
-  //   if (isClicked === true) {
-  //     document.querySelector("#works").classList.remove("show");
-  //     setIsClicked(false);
-  //   } else {
-  //     document.querySelector("#works").classList.add("show");
-  //     setIsClicked(true);
-  //   }
-  // }
+  
 
   return (
-    <Images style={parent}>
-      <HorizontalScroll reverseScroll={true} animValues={100}>
-        {data.map((item) => (
-          <a style={child} href={`work/${item.id}`}>
-            <Image
-              className="hover:grayscale-0 hover:scale-125 ease-in-out duration-700"
-              src={item.img}
-              draggable="false"
-            />
-          </a>
-        ))}
-      </HorizontalScroll>
+    <Images className="box  ease-in duration-[1s]" id="box" >
+      {data.map((item) => (
+        <a href={`work/${item.id}`}>
+          <Image
+            className="hover:grayscale-0 hover:scale-125 ease-in-out duration-500"
+            src={item.img}
+            draggable="false"
+          />
+        </a>
+      ))}
     </Images>
   );
 };
