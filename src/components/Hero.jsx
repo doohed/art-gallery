@@ -1,11 +1,13 @@
 import styled, { useTheme } from "styled-components";
 import Track from "./Track";
 import { useEffect, useRef, useState } from "react";
+import Art from "./Art";
 
 const Container = styled.div`
   overflow: hidden;
   height: 90vh;
   filter: opacity(0);
+  user-select: none;
 `;
 
 const Title = styled.div`
@@ -13,7 +15,7 @@ const Title = styled.div`
   margin-left: 80px;
   margin-bottom: 15px;
   margin-top: 15vh;
-  user-select: none;
+  
 `;
 
 const Images = styled.div`
@@ -31,7 +33,7 @@ position: absolute;
   cursor: pointer;
   rotate: 270deg;
   left: 0px;
-  bottom: 50px;
+  bottom: 46px;
 
 `;
 
@@ -55,9 +57,8 @@ const Hero = () => {
 
   function open() {
     document.querySelector("#menu").classList.add("show");
-    
   }
-
+  
   return (
     <Container
     id="hero"
@@ -68,13 +69,13 @@ const Hero = () => {
         <h1>石田 スイ</h1>
         <h1 className="ml-14">GALLERY</h1>
       </Title>
+      
       <Images id="container" ref={elementRef}>
         <Track />
       </Images>
       <div className="flex">
         <h2 className="text-5xl mt-5 ml-20 select-none">漫画家</h2>
       </div>
-
       <Link onClick={open} className="relative group ease-in-out duration-300">
         <h2>MENU</h2>
         <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-700 transition-all group-hover:w-full"/>

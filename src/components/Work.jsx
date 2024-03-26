@@ -14,8 +14,12 @@ const Section = styled.div`
 `;
 
 const Left = styled.div`
-  position: absolute;
-  overflow-x: auto;
+
+  position: relative;
+  height: 90vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none;
 `;
 
 const Right = styled.div``;
@@ -28,9 +32,9 @@ const Title = styled.div`
 
 const Container = styled.div`
   width: 80vw;
-  height: 100vh;
+  
   margin-left: 10vw;
-  position: absolute;
+
 `;
 
 const Project = styled.div`
@@ -41,6 +45,7 @@ const Project = styled.div`
   background-color: white;
 `;
 const List = styled.div`
+position: absolute;
   margin-top: 50px;
   text-align: left;
 `;
@@ -80,10 +85,11 @@ const Work = () => {
   return (
     <Section id="work" className="hide show">
       <Container>
+        
+        <Left>
         <Title>
           <h1 className="">ARTWORK</h1>
         </Title>
-        <Left>
           <List>
             <ItemList className={ItemClass}>
               <ItemText>東京グール 芸術 (げいじゅつ)</ItemText>

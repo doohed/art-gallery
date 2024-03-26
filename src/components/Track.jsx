@@ -2,7 +2,6 @@
 
 import styled from "styled-components";
 import { data } from "../mockData";
-import { useRef } from "react";
 
 const Images = styled.div`
   display: flex;
@@ -21,7 +20,7 @@ const Image = styled.img`
   object-fit: cover;
   object-position: 100% center;
   filter: grayscale(1);
-  cursor: pointer;
+  
 `;
 
 const Track = () => {
@@ -30,7 +29,7 @@ const Track = () => {
   return (
     <Images className=" ease-out duration-[1s]" id="box" >
       {data.map((item) => (
-        <a href={`work/${item.id}`} draggable="false">
+        <a draggable="false">
           <Image
             className="hover:grayscale-0 hover:scale-125 ease-in-out duration-500"
             src={item.img}
