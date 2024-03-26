@@ -11,8 +11,15 @@ const Container = styled.div`
   overflow-x: hidden;
 `;
 
+let value = 0;
+
+export function change(x) {
+  value=x;
+  document.querySelector("#art").classList.add("show");
+  document.querySelector("#hero").classList.remove("show");
+}
+
 function App() {
-  
   // const router = createBrowserRouter([
   //   {
   //     path: "/",
@@ -36,12 +43,15 @@ function App() {
       <Container>
         {/* <RouterProvider router={router} /> */}
         <Routes>
-          <Route path="/" element={<Hero/>}/>
-          <Route path="artwork" element={<Work/>}/>
-          <Route path="art" element={<Art/>}/>
-          <Route path="info" element={<Info/>}/>
+          <Route path="/" element={<Hero />}>
+            <Route path="popup" element={<Art />}></Route>
+          </Route>
+          <Route path="artwork" element={<Work />} />
+
+          <Route path="info" element={<Info />} />
         </Routes>
         <Menu />
+        <Art value={value} />
       </Container>
     </>
   );

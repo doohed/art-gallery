@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { data } from "../mockData";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Section = styled.div``;
 
@@ -9,6 +9,10 @@ const Container = styled.div`
   height: 100vh;
   left: 0px;
   top: 0px;
+  width: 100vw;
+  background-color: #0000007f;
+  filter: opacity(0);
+  z-index: -1;
 `;
 
 const Top = styled.div`
@@ -19,7 +23,7 @@ const Top = styled.div`
 `;
 
 const Mid = styled.div`
-  width: 100vw;
+  width: 95vw;
 `;
 
 const Bot = styled.div``;
@@ -40,70 +44,42 @@ const Image = styled.img`
 const Link = styled.a`
   margin-top: 40px;
   margin-left: 5vw;
+  height: 13px;
+  cursor: pointer;
 `;
 const Navbar = styled.div`
-  width: 25vw;
+  width: 24.5vw;
   height: 10vh;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-  margin-right: 5vw;
+  margin-right: 8vw;
 `;
 
+function Art(count) {
+  const [currentId,setCurrentId] = useState(count.value);
 
-function Art() {
-  const [currentId, setCurrentId] = useState(0);
+useEffect(() => {
+  setCurrentId(count.value)
+  
+}, [currentId, count.value]);
+ 
+  console.log(count.value)
 
-
+  function close() {
+    document.querySelector("#art").classList.add("hide");
+    document.querySelector("#art").classList.remove("show");
+    document.querySelector("#hero").classList.add("show");
+  }
 
   return (
     <Section className="">
-      <Container className="hide show backdrop-blur-sm">
+      <Container id="art" className=" backdrop-blur-sm ease-in-out duration-300">
         <Top>
-          <Link>
+          <Link onClick={close} className="relative group">
             <h2>CLOSE</h2>
+            <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-700 transition-all group-hover:w-full" />
           </Link>
-          <Navbar>
-            <div className="text-right">
-              <h2 className="text-[30px]">{data[currentId].id}</h2>
-            </div>
-            <div className="w-full h-1 bg-gray-700 group:"></div>
-
-            <div className="flex justify-between text-xl">
-              <a href="" className="ease-in-out duration-300">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-10 h-10"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M15.75 19.5 8.25 12l7.5-7.5"
-                  />
-                </svg>
-              </a>
-              <a href="" className="ease-in-out duration-300">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-10 h-10"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="m8.25 4.5 7.5 7.5-7.5 7.5"
-                  />
-                </svg>
-              </a>
-            </div>
-          </Navbar>
         </Top>
         <Mid>
           <Frame>
@@ -117,6 +93,3 @@ function Art() {
 }
 
 export default Art;
-
-
-

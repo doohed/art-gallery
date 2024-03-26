@@ -15,7 +15,6 @@ const Title = styled.div`
   margin-left: 80px;
   margin-bottom: 15px;
   margin-top: 15vh;
-  
 `;
 
 const Images = styled.div`
@@ -29,13 +28,13 @@ const Images = styled.div`
 `;
 
 const Link = styled.a`
-position: absolute;
+  position: absolute;
   cursor: pointer;
   rotate: 270deg;
   left: 0px;
   bottom: 46px;
-
 `;
+
 
 const Hero = () => {
   const [cord, setCord] = useState(null);
@@ -55,13 +54,15 @@ const Hero = () => {
     ).style.transform = `translate(-${percentage}vw,0%)`;
   };
 
+  
+
   function open() {
     document.querySelector("#menu").classList.add("show");
   }
-  
+
   return (
     <Container
-    id="hero"
+      id="hero"
       onMouseMove={handleMouseMove}
       className=" hide show text-left box ease-in-out duration-300"
     >
@@ -69,7 +70,7 @@ const Hero = () => {
         <h1>石田 スイ</h1>
         <h1 className="ml-14">GALLERY</h1>
       </Title>
-      
+
       <Images id="container" ref={elementRef}>
         <Track />
       </Images>
@@ -78,10 +79,12 @@ const Hero = () => {
       </div>
       <Link onClick={open} className="relative group ease-in-out duration-300">
         <h2>MENU</h2>
-        <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-700 transition-all group-hover:w-full"/>
+        <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-700 transition-all group-hover:w-full" />
       </Link>
     </Container>
   );
 };
 
 export default Hero;
+
+
