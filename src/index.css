@@ -29,7 +29,7 @@ body {
   margin: 0;
   width: 100vw;
   place-items: center;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 h1 {
@@ -59,7 +59,7 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    background-color: #F0EAD6;
   }
   a{
     color:black;

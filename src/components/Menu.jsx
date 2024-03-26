@@ -8,9 +8,13 @@ const Container = styled.div`
   width: 100vw;
   height: 100vh;
   align-items: center;
-  
+  background-color: #000000;
+
   filter: opacity(0);
   z-index: -1;
+  @media (prefers-color-scheme: light) {
+    background-color: #f0ead6;
+  }
 `;
 
 const Title = styled.div`
@@ -24,7 +28,7 @@ const Link = styled.a`
   rotate: 270deg;
   position: absolute;
   left: 30px;
-  bottom: 5vh;
+  bottom: 48px;
   margin-bottom: 60px;
   cursor: pointer;
 `;
@@ -42,34 +46,74 @@ const Menu = () => {
   function closeMenu() {
     document.querySelector("#menu").classList.add("hide");
     document.querySelector("#menu").classList.remove("show");
-    document.querySelector("#hero").classList.add("show");
-    document.querySelector("#hero").classList.remove("hide");
-    
+  }
+
+  function goToIndex() {
+    if (window.location.href.indexOf("/")) {
+      document.querySelector("#menu").classList.add("hide");
+      document.querySelector("#menu").classList.remove("show");
+    }
+
+    if (window.location.href.indexOf("/artwork")) {
+      document.querySelector("#work").classList.remove("show");
+      document.querySelector("#work").classList.remove("hide");
+
+      document.querySelector("#menu").classList.add("hide");
+      document.querySelector("#menu").classList.remove("show");
+      setTimeout(() => {
+        window.location.assign("/");
+      }, "500");
+    }
+  }
+
+  function goToWorks() {
+    if (window.location.href.indexOf("/artwork")) {
+      document.querySelector("#menu").classList.add("hide");
+      document.querySelector("#menu").classList.remove("show");
+    }
+
+    if (window.location.href.indexOf("/")) {
+      document.querySelector("#hero").classList.remove("show");
+      document.querySelector("#hero").classList.remove("hide");
+
+      document.querySelector("#menu").classList.add("hide");
+      document.querySelector("#menu").classList.remove("show");
+      setTimeout(() => {
+        window.location.assign("/artwork");
+      }, "500");
+    }
   }
 
   return (
     <Container id="menu" className="">
       <Title>
-        <a onClick={closeMenu} className="ease-in-out duration-300">
+        <a onClick={goToIndex} className="ease-in-out duration-300">
           <h1>石田 スイ</h1>
           <h1 className="ml-14">GALLERY</h1>
         </a>
       </Title>
       <Section>
         <List>
-          <a onClick={closeMenu} className="cursor-pointer ease-in-out duration-300">
+          <a
+            onClick={goToIndex}
+            className="cursor-pointer ease-in-out duration-300"
+          >
             <h1>.INDEX</h1>
           </a>
-          <a href="" className="ease-in-out duration-300">
+          <a
+            onClick={goToWorks}
+            className="cursor-pointer ease-in-out duration-300"
+          >
             <h1>.ARTWORK</h1>
           </a>
-          <a href="" className="ease-in-out duration-300">
+          <a href="" className="cursor-pointer ease-in-out duration-300">
             <h1>.INFO</h1>
           </a>
         </List>
       </Section>
-      <Link onClick={closeMenu}>
+      <Link onClick={closeMenu} className="relative group">
         <h2 className="ease-in-out duration-300">CLOSE</h2>
+        <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-700 transition-all group-hover:w-full" />
       </Link>
     </Container>
   );

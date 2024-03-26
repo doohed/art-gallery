@@ -2,59 +2,146 @@
 
 import styled from "styled-components";
 import { data } from "../mockData";
+import { useEffect } from "react";
 
 const Section = styled.div`
-  top: 0px;
-  left: 0px;
-  position: absolute;
   height: 100vh;
-  display: flex;
-`;
-
-const Image = styled.img`
-  margin-top: 10vh;
-  height: 80vh;
-
-  object-fit: cover;
-  object-position: 100% center;
-`;
-
-const Container = styled.div`
-  height: 100vh;
-  width: 150vw;
-  display: flex;
-  transform: translate(-32%, 0%);
+  align-items: center;
+  user-select: none;
+  filter: opacity(0);
+  z-index: 0;
+  overflow: hidden;
 `;
 
 const Left = styled.div`
-  text-align: left;
-  height: 100vh;
-  width: 50vw;
+  position: absolute;
+  overflow-x: auto;
 `;
 
-const Right = styled.div`
-  height: 100vh;
-`;
+const Right = styled.div``;
 
 const Title = styled.div`
-  margin-top: 20vh;
+
+  text-align: left;
+  width: 100vw;
 `;
-const Father = styled.div``;
+
+const Container = styled.div`
+  width: 80vw;
+  height: 100vh;
+  margin-left: 10vw;
+  position: absolute;
+`;
+
+const Project = styled.div`
+  position: absolute;
+  width: 50vw;
+  right: 0px;
+  top: 0px;
+  background-color: white;
+`;
+const List = styled.div`
+  margin-top: 50px;
+  text-align: left;
+`;
+
+const ItemText = styled.h2`
+  font-family: fot-klee-pro, serif;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  font-feature-settings: "palt", "calt", "liga";
+  font-variation-settings: "wght" 400;
+`;
+
+const ItemList = styled.div`
+  margin-bottom: 40px;
+  cursor: pointer;
+  &:hover {
+    color: gray;
+  }
+`;
+
+const Link = styled.a`
+  rotate: 270deg;
+  position: absolute;
+  left: 0px;
+  bottom: 140px;
+  cursor: pointer;
+`;
 
 const Work = () => {
-
+  const ItemClass = "ease-in-out duration-300 relative group";
+  function open() {
+    document.querySelector("#menu").classList.add("show");
+  }
 
   return (
-    <Section>
-      <Title>
+    <Section id="work" className="hide show">
+      <Container>
+        <Title>
+          <h1 className="">ARTWORK</h1>
+        </Title>
+        <Left>
+          <List>
+            <ItemList className={ItemClass}>
+              <ItemText>東京グール 芸術 (げいじゅつ)</ItemText>
+              <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-700 transition-all group-hover:w-full" />
+            </ItemList>
+            <ItemList className={ItemClass}>
+              <ItemText>東京グール 芸術 (げいじゅつ)</ItemText>
+              <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-700 transition-all group-hover:w-full" />
+            </ItemList>
+            <ItemList className={ItemClass}>
+              <ItemText>東京グール 芸術 (げいじゅつ)</ItemText>
+              <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-700 transition-all group-hover:w-full" />
+            </ItemList>
+            <ItemList className={ItemClass}>
+              <ItemText>東京グール 芸術 (げいじゅつ)</ItemText>
+              <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-700 transition-all group-hover:w-full" />
+            </ItemList>
+            <ItemList className={ItemClass}>
+              <ItemText>東京グール 芸術 (げいじゅつ)</ItemText>
+              <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-700 transition-all group-hover:w-full" />
+            </ItemList>
+            <ItemList className={ItemClass}>
+              <ItemText>東京グール 芸術 (げいじゅつ)</ItemText>
+              <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-700 transition-all group-hover:w-full" />
+            </ItemList>
+            <ItemList className={ItemClass}>
+              <ItemText>東京グール 芸術 (げいじゅつ)</ItemText>
+              <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-700 transition-all group-hover:w-full" />
+            </ItemList>
+            <ItemList className={ItemClass}>
+              <ItemText>東京グール 芸術 (げいじゅつ)</ItemText>
+              <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-700 transition-all group-hover:w-full" />
+            </ItemList>
+            <ItemList className={ItemClass}>
+              <ItemText>東京グール 芸術 (げいじゅつ)</ItemText>
+              <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-700 transition-all group-hover:w-full" />
+            </ItemList>
+            <ItemList className={ItemClass}>
+              <ItemText>東京グール 芸術 (げいじゅつ)</ItemText>
+              <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-700 transition-all group-hover:w-full" />
+            </ItemList>
+            <ItemList className={ItemClass}>
+              <ItemText>東京グール 芸術 (げいじゅつ)</ItemText>
+              <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-700 transition-all group-hover:w-full" />
+            </ItemList>
+            <ItemList className={ItemClass}>
+              <ItemText>東京グール 芸術 (げいじゅつ)</ItemText>
+              <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-700 transition-all group-hover:w-full" />
+            </ItemList>
+          </List>
+        </Left>
+        <Right></Right>
+      </Container>
 
-      </Title>
-      <Left>
-
-      </Left>
-      <Right>
-        
-      </Right>
+      <Link onClick={open} className="relative group">
+        <h2 className="ease-in-out duration-300">MENU</h2>
+        <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-700 transition-all group-hover:w-full" />
+      </Link>
     </Section>
   );
 };

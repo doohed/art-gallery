@@ -17,7 +17,7 @@ function App() {
       element: <Hero />,
     },
     {
-      path: "work",
+      path: "artwork",
       element: <Work />,
     },
   ]);
