@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { useState } from "react";
 import Art from "./Art";
 
+
 const Section = styled.div`
   height: 100vh;
   align-items: center;
@@ -88,6 +89,8 @@ const Work = () => {
   function change(x) {
     setValue(x);
     document.querySelector("#art").classList.add("show");
+    
+    
   }
 
   return (

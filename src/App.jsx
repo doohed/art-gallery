@@ -15,24 +15,7 @@ const Container = styled.div`
 let value = 0;
 
 function App() {
-  // const router = createBrowserRouter([
-  //   {
-  //     path: "/",
-  //     element: <Hero />,
-  //   },
-  //   {
-  //     path: "artwork",
-  //     element: <Work />,
-  //   },
-  //   {
-  //     path: "art",
-  //     element: <Art/>,
-  //   },
-  //   {
-  //     path: "info",
-  //     element: <Info/>,
-  //   },
-  // ]);
+
   return (
     <>
       <Container>

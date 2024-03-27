@@ -60,14 +60,15 @@ const  Art = (count) => {
   
 const [currentImg, setCurrentImg] = useState(data[count.value].img)
 
-console.log(count.value)
   
+useEffect(() => {
+  setCurrentImg(data[count.value].img)
+}, [count.value]);
 
 
   function close() {
     document.querySelector("#art").classList.add("hide");
     document.querySelector("#art").classList.remove("show");
-    document.querySelector("#hero").classList.add("show");
   }
 
   return (
@@ -92,7 +93,3 @@ console.log(count.value)
 
 export default Art;
 
-function onChange() {
-
-
-}
