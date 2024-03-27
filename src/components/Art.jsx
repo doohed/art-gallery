@@ -42,18 +42,12 @@ const Image = styled.img`
 `;
 
 const Link = styled.a`
-  margin-top: 40px;
-  margin-left: 5vw;
-  height: 13px;
+  rotate: 270deg;
+  position: absolute;
+  left: 0px;
+  bottom: 80px;
+  margin-bottom: 60px;
   cursor: pointer;
-`;
-const Navbar = styled.div`
-  width: 24.5vw;
-  height: 10vh;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  margin-right: 8vw;
 `;
 
 const  Art = (count) => {
@@ -75,10 +69,7 @@ useEffect(() => {
     <Section className="">
       <Container id="art" className=" backdrop-blur-sm ease-in-out duration-300">
         <Top>
-          <Link onClick={close} className="relative group">
-            <h2>CLOSE</h2>
-            <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-700 transition-all group-hover:w-full" />
-          </Link>
+          
         </Top>
         <Mid>
           <Frame>
@@ -86,6 +77,10 @@ useEffect(() => {
           </Frame>
         </Mid>
         <Bot></Bot>
+        <Link onClick={close} className="relative group">
+        <h2 className="ease-in-out duration-300">CLOSE</h2>
+        <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-700 transition-all group-hover:w-full" />
+      </Link>
       </Container>
     </Section>
   );
