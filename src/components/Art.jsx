@@ -10,7 +10,7 @@ const Container = styled.div`
   left: 0px;
   top: 0px;
   width: 100vw;
-  background-color: #0000007f;
+  background-color: #000000dc;
   filter: opacity(0);
   z-index: -1;
 `;

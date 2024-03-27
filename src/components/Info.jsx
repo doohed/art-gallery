@@ -44,15 +44,20 @@ const Text = styled.div`
 `;
 
 const Info = () => {
+  setTimeout(() => {
+    document.querySelector("#info").classList.remove("charge2");
+    document.querySelector(".title").classList.remove("charge2");
+  }, 300);
+
   function open() {
     document.querySelector("#menu").classList.add("show");
   }
 
   return (
-    <Container id="info" className="hide show box ease-in-out duration-300">
+    <Container id="info" className="charge2 hide show box ease-in-out duration-[.8s]">
       <Section>
         <div className="text-left">
-          <h1 className="mt-[10vmin]">INFORMATION</h1>
+          <h1 className="title charge2 mt-[10vmin] ease-in-out duration-[1s]">INFORMATION</h1>
           <div className="w-full h-[1px] bg-gray-700" />
           <Text className="h-[80vh] text-lg">
             <div className="ml-10 mt-[10vmin] mb-10 mr-9 flex">

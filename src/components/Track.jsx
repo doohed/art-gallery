@@ -21,7 +21,7 @@ const Image = styled.img`
   object-fit: cover;
   object-position: 100% center;
   filter: grayscale(1);
-  cursor: pointer;
+  /* cursor: pointer; */
 `;
 
 const Track = () => {
@@ -36,7 +36,7 @@ const Track = () => {
         <a draggable="false">
           <Image
           id="album"
-            onClick={() => change(item.id-1)}
+            // onClick={() => change(item.id-1)}
             className=" hover:grayscale-0 hover:scale-125 ease-in-out duration-500"
             src={item.img}
             draggable="false"
