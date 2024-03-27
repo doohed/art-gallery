@@ -1,7 +1,6 @@
-import styled, { useTheme } from "styled-components";
+import styled from "styled-components";
 import Track from "./Track";
-import { useEffect, useRef, useState } from "react";
-import Art from "./Art";
+import {  useRef, useState } from "react";
 
 const Container = styled.div`
   overflow: hidden;
@@ -25,8 +24,8 @@ const Images = styled.div`
   height: 32.3vh;
   width: 100%;
   margin: 0rem;
-  overflow-y: auto;
-  overflow-x: hidden;
+  
+  overflow: hidden;
 `;
 
 const Link = styled.a`
@@ -52,7 +51,7 @@ const Hero = () => {
 
   const elementRef = useRef(null);
 
-  useEffect(() => {}, []);
+  
 
   const handleMouseMove = (e) => {
     setCord(e.clientX - 33);

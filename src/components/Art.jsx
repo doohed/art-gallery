@@ -10,14 +10,14 @@ const Container = styled.div`
   left: 0px;
   top: 0px;
   width: 100vw;
-  background-color: #000000dc;
+  backdrop-filter: blur(10px);
   filter: opacity(0);
   z-index: -1;
+  user-select: none;
 `;
 
 const Top = styled.div`
   height: 100px;
-  border: 1px black solid;
   display: flex;
   justify-content: space-between;
 `;
@@ -50,6 +50,7 @@ const Link = styled.a`
   cursor: pointer;
 `;
 
+
 const  Art = (count) => {
   
 const [currentImg, setCurrentImg] = useState(data[count.value].img)
@@ -67,7 +68,7 @@ useEffect(() => {
 
   return (
     <Section className="">
-      <Container id="art" className=" backdrop-blur-sm ease-in-out duration-300">
+      <Container onClick={close} id="art" className=" ease-in-out duration-300">
         <Top>
           
         </Top>

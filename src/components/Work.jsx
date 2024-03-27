@@ -3,7 +3,7 @@
 import styled from "styled-components";
 import { useState } from "react";
 import Art from "./Art";
-
+import { data } from "../mockData";
 
 const Section = styled.div`
   height: 100vh;
@@ -89,64 +89,25 @@ const Work = () => {
   function change(x) {
     setValue(x);
     document.querySelector("#art").classList.add("show");
-    
-    
   }
 
   return (
     <Section id="work" className="charge2 hide show ease-in-out duration-[.8s]">
-      <Container>
+      <Container className="cont">
         <Left>
           <Title className="title charge2 ease-in-out duration-1000">
             <h1 className="">ARTWORK</h1>
           </Title>
           <List>
-            <ItemList className={ItemClass} onClick={() => change(0)}>
-              <ItemText className="">
-                東京グール 芸術 (げいじゅつ)
-              </ItemText>
-              <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-700 transition-all group-hover:w-full" />
-            </ItemList>
-            <ItemList className={ItemClass} onClick={() => change(1)}>
-              <ItemText>:re cover</ItemText>
-              <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-700 transition-all group-hover:w-full" />
-            </ItemList>
-            <ItemList className={ItemClass} onClick={() => change(2)}>
-              <ItemText>Ken Kaneki/Tokyo Ghoul</ItemText>
-              <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-700 transition-all group-hover:w-full" />
-            </ItemList>
-            <ItemList className={ItemClass} onClick={() => change(3)}>
-              <ItemText>金木研 / 東京喰種</ItemText>
-              <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-700 transition-all group-hover:w-full" />
-            </ItemList>
-            <ItemList className={ItemClass} onClick={() => change(4)}>
-              <ItemText>籠村シモン / 超人X</ItemText>
-              <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-700 transition-all group-hover:w-full" />
-            </ItemList>
-            <ItemList className={ItemClass} onClick={() => change(5)}>
-              <ItemText>籠村シモン</ItemText>
-              <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-700 transition-all group-hover:w-full" />
-            </ItemList>
-            <ItemList className={ItemClass} onClick={() => change(6)}>
-              <ItemText>超人X7巻カバー</ItemText>
-              <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-700 transition-all group-hover:w-full" />
-            </ItemList>
-            <ItemList className={ItemClass} onClick={() => change(7)}>
-              <ItemText>tokio azuma / choujin X</ItemText>
-              <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-700 transition-all group-hover:w-full" />
-            </ItemList>
-            <ItemList className={ItemClass} onClick={() => change(8)}>
-              <ItemText>choujin X vol.6</ItemText>
-              <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-700 transition-all group-hover:w-full" />
-            </ItemList>
-            <ItemList className={ItemClass} onClick={() => change(9)}>
-              <ItemText>Tokio Kurohara / Choujin X</ItemText>
-              <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-700 transition-all group-hover:w-full" />
-            </ItemList>
-            <ItemList className={ItemClass} onClick={() => change(10)}>
-              <ItemText>篠原と鈴屋什造</ItemText>
-              <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-700 transition-all group-hover:w-full" />
-            </ItemList>
+            {data.map((item) => (
+              <ItemList
+                className={ItemClass}
+                onClick={() => change(item.id - 1)}
+              >
+                <ItemText className="">{item.title}</ItemText>
+                <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-700 transition-all group-hover:w-full" />
+              </ItemList>
+            ))}
           </List>
         </Left>
         <Right></Right>

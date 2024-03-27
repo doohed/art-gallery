@@ -15,16 +15,15 @@ const Container = styled.div`
 let value = 0;
 
 function App() {
-
   return (
     <>
       <Container>
-        {/* <RouterProvider router={router} /> */}
         <Routes>
-          <Route path="/" element={<Hero />} />        
+          <Route path="/" element={<Hero />} />
           <Route path="artwork" element={<Work />} />
-          <Route path="popup" element={<Showcase />}/>
+          <Route path="popup" element={<Showcase />} />
           <Route path="info" element={<Info />} />
+          <Route path="show" element={<Showcase />} />
         </Routes>
         <Menu />
         <Art value={value} />
@@ -35,11 +34,9 @@ function App() {
 
 export default App;
 
-
-
 export function change(x) {
-  console.log(x)
-  value=x;
+  console.log(x);
+  value = x;
   document.querySelector("#art").classList.add("show");
   document.querySelector("#hero").classList.remove("show");
 }

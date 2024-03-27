@@ -1,8 +1,7 @@
-/* eslint-disable react/jsx-key */
+
 
 import styled from "styled-components";
 import { data } from "../mockData";
-import { change } from "../App";
 
 const Images = styled.div`
   display: flex;
@@ -25,7 +24,6 @@ const Image = styled.img`
 `;
 
 const Track = () => {
-
   setTimeout(() => {
     document.querySelector("#album").classList.remove("charge");
   }, 300);
@@ -33,10 +31,9 @@ const Track = () => {
   return (
     <Images className=" ease-out duration-[1s]" id="box">
       {data.map((item) => (
-        <a draggable="false">
+        <a key={`image `+item.id} draggable="false">
           <Image
-          id="album"
-            // onClick={() => change(item.id-1)}
+            id="album"
             className=" hover:grayscale-0 hover:scale-125 ease-in-out duration-500"
             src={item.img}
             draggable="false"
