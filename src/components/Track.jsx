@@ -25,13 +25,19 @@ const Image = styled.img`
 `;
 
 const Track = () => {
+
+  setTimeout(() => {
+    document.querySelector("#album").classList.remove("charge");
+  }, 300);
+
   return (
     <Images className=" ease-out duration-[1s]" id="box">
       {data.map((item) => (
         <a draggable="false">
           <Image
+          id="album"
             onClick={() => change(item.id-1)}
-            className="hover:grayscale-0 hover:scale-125 ease-in-out duration-500"
+            className=" hover:grayscale-0 hover:scale-125 ease-in-out duration-500"
             src={item.img}
             draggable="false"
           />

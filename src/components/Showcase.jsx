@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { data } from "../mockData";
+import { data } from "../mockData.js";
 import { useEffect, useState } from "react";
 
 const Section = styled.div``;
@@ -56,13 +56,15 @@ const Navbar = styled.div`
   margin-right: 8vw;
 `;
 
-const  Art = (count) => {
+const  Showcase = (count) => {
   
-const [currentImg, setCurrentImg] = useState(data[count.value].img)
 
 console.log(count.value)
   
-
+useEffect(() => {
+  console.log(count.value)
+  
+}, [count.value]);
 
   function close() {
     document.querySelector("#art").classList.add("hide");
@@ -81,7 +83,7 @@ console.log(count.value)
         </Top>
         <Mid>
           <Frame>
-            <Image id="image" className=" ease-in-out duration-1000" src={currentImg} />
+            <Image id="image" className=" ease-in-out duration-1000" src={data[count.value].img} />
           </Frame>
         </Mid>
         <Bot></Bot>
@@ -90,9 +92,4 @@ console.log(count.value)
   );
 }
 
-export default Art;
-
-function onChange() {
-
-
-}
+export default Showcase;

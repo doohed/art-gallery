@@ -15,6 +15,8 @@ const Title = styled.div`
   margin-left: 80px;
   margin-bottom: 15px;
   margin-top: 15vh;
+  filter: opacity(0);
+  animation: loadTitle 2s forwards;
 `;
 
 const Images = styled.div`
@@ -35,8 +37,15 @@ const Link = styled.a`
   bottom: 46px;
 `;
 
+const Footer = styled.div`
+  filter: opacity(0);
+  animation: loadTitle 3s forwards;
+`;
 
 const Hero = () => {
+  setTimeout(() => {
+    document.querySelector("#hero").classList.remove("charge");
+  }, 300);
   const [cord, setCord] = useState(null);
   const [x, setX] = useState(null);
   const [percentage, setPercentage] = useState(null);
@@ -54,8 +63,6 @@ const Hero = () => {
     ).style.transform = `translate(-${percentage}vw,0%)`;
   };
 
-  
-
   function open() {
     document.querySelector("#menu").classList.add("show");
   }
@@ -64,9 +71,9 @@ const Hero = () => {
     <Container
       id="hero"
       onMouseMove={handleMouseMove}
-      className=" hide show text-left box ease-in-out duration-300"
+      className="charge hide show text-left box ease-in-out duration-1000"
     >
-      <Title>
+      <Title className="lateshow ease-in-out duration-1000">
         <h1>石田 スイ</h1>
         <h1 className="ml-14">GALLERY</h1>
       </Title>
@@ -74,9 +81,9 @@ const Hero = () => {
       <Images id="container" ref={elementRef}>
         <Track />
       </Images>
-      <div className="flex">
+      <Footer className="flex">
         <h2 className="text-5xl mt-5 ml-20 select-none">漫画家</h2>
-      </div>
+      </Footer>
       <Link onClick={open} className="relative group ease-in-out duration-300">
         <h2>MENU</h2>
         <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-700 transition-all group-hover:w-full" />
@@ -86,5 +93,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
-

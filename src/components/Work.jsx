@@ -73,7 +73,7 @@ const Link = styled.a`
 `;
 
 const Work = () => {
-  const ItemClass = "ease-in-out duration-300 relative";
+  const ItemClass = "ease-in-out duration-300 relative group";
   function open() {
     document.querySelector("#menu").classList.add("show");
   }
@@ -110,7 +110,7 @@ const Work = () => {
               <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-700 transition-all group-hover:w-full" />
             </ItemList>
             <ItemList className={ItemClass} onClick={() => change(4)}>
-              <ItemText>籠村シモン　/ 　超人X</ItemText>
+              <ItemText>籠村シモン / 超人X</ItemText>
               <div className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gray-700 transition-all group-hover:w-full" />
             </ItemList>
             <ItemList className={ItemClass} onClick={() => change(5)}>
