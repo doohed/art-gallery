@@ -1,7 +1,5 @@
-
-
 import styled from "styled-components";
-import { data } from "../mockData";
+import { data } from "./mockData";
 
 const Images = styled.div`
   display: flex;
@@ -20,7 +18,7 @@ const Image = styled.img`
   object-fit: cover;
   object-position: 100% center;
   filter: grayscale(1);
-  /* cursor: pointer; */
+  cursor: pointer;
 `;
 
 const Track = () => {
@@ -28,12 +26,20 @@ const Track = () => {
     document.querySelector("#album").classList.remove("charge");
   }, 300);
 
+  function gallery(count) {
+    document.querySelector(".home").classList.remove("show");
+    setTimeout(() => {
+      window.location.assign(`/${count}`);
+    }, "500");
+  }
+
   return (
     <Images className=" ease-out duration-[1s]" id="box">
       {data.map((item) => (
-        <a key={`image `+item.id} draggable="false">
+        <a key={`image ` + item.id} draggable="false">
           <Image
             id="album"
+            onClick={()=> (gallery(item.id))}
             className=" hover:grayscale-0 hover:scale-125 ease-in-out duration-500"
             src={item.img}
             draggable="false"

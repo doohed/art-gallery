@@ -51,8 +51,6 @@ const Hero = () => {
 
   const elementRef = useRef(null);
 
-  
-
   const handleMouseMove = (e) => {
     setCord(e.clientX - 33);
     setX(document.querySelector(".box").clientWidth);
@@ -66,11 +64,13 @@ const Hero = () => {
     document.querySelector("#menu").classList.add("show");
   }
 
+  
+
   return (
     <Container
       id="hero"
       onMouseMove={handleMouseMove}
-      className="charge hide show text-left box ease-in-out duration-1000"
+      className="home charge hide show text-left box ease-in-out duration-1000"
     >
       <Title className="lateshow ease-in-out duration-1000">
         <h1>石田 スイ</h1>
