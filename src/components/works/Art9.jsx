@@ -36,7 +36,7 @@ const Image = styled.img`
   min-width: 700px;
   object-fit: cover;
   @media (max-width: 820px) {
-    height: 5cap;
+    height: 50vh;
     min-width: 100vw;
   }
 `;
