@@ -144,7 +144,7 @@ const Art7 = () => {
       <Section
         id="box"
         onWheel={handleScroll}
-        className="ease-out duration-[1s]"
+        className=""
       >
         <Left>
           <Frame>

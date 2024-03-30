@@ -142,7 +142,7 @@ const Art1 = () => {
       <Section
         id="box"
         onWheel={handleScroll}
-        className="ease-out duration-[1s]"
+        className=""
       >
         <Left>
           <Frame>
@@ -162,7 +162,7 @@ const Art1 = () => {
           </h2>
           <Nextimg
             onClick={follow}
-            className="m-[10px] hover:grayscale-0 ease-in-out duration-700"
+            className="m-[10px] hover:grayscale-0 ease-in-out duration-100"
             src={data[1].img}
           />
         </Next>
