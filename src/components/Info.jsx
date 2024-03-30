@@ -24,6 +24,9 @@ const Link = styled.a`
   bottom: 48px;
   margin-bottom: 60px;
   cursor: pointer;
+  @media (max-width: 1060px) {
+    left: 0px;
+  }
 `;
 
 const Section = styled.div`
@@ -60,7 +63,7 @@ const Info = () => {
       <Section>
         <div className="text-left">
           <h1 className="title charge2 mt-[10vmin] ease-in-out duration-[1s]">
-            INFORMATION
+            INFO
           </h1>
           <div className="w-full h-[1px] bg-gray-700" />
           <Text className="h-[80vh] text-lg">

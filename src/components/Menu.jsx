@@ -33,6 +33,9 @@ const Link = styled.a`
   bottom: 48px;
   margin-bottom: 60px;
   cursor: pointer;
+  @media (max-width: 1060px) {
+    left: 0px;
+  }
 `;
 
 const Section = styled.div``;

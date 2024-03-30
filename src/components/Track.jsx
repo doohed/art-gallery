@@ -10,6 +10,10 @@ const Images = styled.div`
   height: 100%;
   overflow: hidden;
   user-select: none;
+  @media (max-width: 820px) {
+    margin-left: 0vw;
+    width: 400vw;
+  }
 `;
 
 const Image = styled.img`
@@ -19,6 +23,11 @@ const Image = styled.img`
   object-position: 100% center;
   filter: grayscale(1);
   cursor: pointer;
+  @media (max-width: 820px) {
+    filter: grayscale(0);
+    width: 40vw;
+    height: 40vh;
+  }
 `;
 
 const Track = () => {

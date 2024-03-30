@@ -7,6 +7,9 @@ const Container = styled.div`
   height: 90vh;
   filter: opacity(0);
   user-select: none;
+  @media (max-width: 1060px) {
+    height: 90vh;
+  }
 `;
 
 const Title = styled.div`
@@ -26,6 +29,9 @@ const Images = styled.div`
   margin: 0rem;
   
   overflow: hidden;
+  @media (max-width: 820px) {
+    overflow: scroll;
+  }
 `;
 
 const Link = styled.a`
@@ -34,6 +40,10 @@ const Link = styled.a`
   rotate: 270deg;
   left: 0px;
   bottom: 46px;
+  @media (max-width: 1060px) {
+    left: 0px;
+    bottom: 48px;
+  }
 `;
 
 const Footer = styled.div`
