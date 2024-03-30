@@ -40,7 +40,7 @@ const Track = () => {
     setTimeout(() => {
       window.location.assign(`/${count}`);
       document.querySelector(".home").classList.add("show");
-    }, "400");
+    }, "200");
   }
 
   return (
