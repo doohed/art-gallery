@@ -8,12 +8,18 @@ const Container = styled.div`
   left: 0px;
   overflow-x: scroll;
   filter: opacity(0);
+  @media (max-width: 820px) {
+    height: 100vh;
+  }
 `;
 
 const Section = styled.div`
   display: flex;
   height: 100vh;
   overflow: hidden;
+  @media (max-width: 820px) {
+    display: inline;
+  }
 `;
 
 const Frame = styled.div`
@@ -29,10 +35,17 @@ const Image = styled.img`
   height: 80vh;
   min-width: 1200px;
   object-fit: cover;
+  @media (max-width: 820px) {
+    height: 30vh;
+    min-width: 100vw;
+  }
 `;
 
 const Left = styled.div`
   margin-left: 10vmin;
+  @media (max-width: 820px) {
+    margin: 0vmin;
+  }
 `;
 
 const Right = styled.div`
@@ -46,6 +59,11 @@ const Next = styled.div`
   margin-top: 30px;
   width: 40vmin;
   text-align: left;
+  @media (max-width: 820px) {
+    filter: grayscale(0);
+    width: 100vw;
+    align-items: center;
+  }
 `;
 
 const Nextimg = styled.img`
@@ -55,6 +73,11 @@ const Nextimg = styled.img`
   margin-right: 10vmin;
   cursor: pointer;
   filter: grayscale(1);
+  @media (max-width: 820px) {
+    filter: grayscale(0);
+    margin: 0px;
+    margin-left: 30vmin;
+  }
 `;
 
 const Link = styled.a`
@@ -64,6 +87,10 @@ const Link = styled.a`
   bottom: 20px;
   margin-bottom: 60px;
   cursor: pointer;
+  @media (max-width: 820px) {
+    top: 8px;
+    rotate: 0deg;
+  }
 `;
 
 const Art8 = () => {
@@ -132,7 +159,7 @@ const Art8 = () => {
           <span>石田 スイ / Ishida Sui</span>
         </Right>
         <Next>
-          <h2 className="mt-[20vmin] ml-2">Next Project</h2>
+          <h2 className="mt-[20vmin] ml-2 max-[820px]:ml-[30vmin]">Next Project</h2>
           <Nextimg
             onClick={follow}
             className="m-[10px] hover:grayscale-0 ease-in-out duration-700"

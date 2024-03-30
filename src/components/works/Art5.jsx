@@ -74,7 +74,7 @@ const Nextimg = styled.img`
   @media (max-width: 820px) {
     filter: grayscale(0);
     margin: 0px;
-    margin-left: 30vmin;
+    margin-left: 32vmin;
   }
 `;
 
@@ -158,7 +158,7 @@ const Art5 = () => {
           <span>石田 スイ / Ishida Sui</span>
         </Right>
         <Next>
-          <h2 className="mt-[20vmin] ml-[30vmin]">Next Project</h2>
+          <h2 className="mt-[20vmin] ml-[30vmin] max-[820px]:ml-[32vmin]">Next Project</h2>
           <Nextimg
             onClick={follow}
             className="m-[10px] hover:grayscale-0 ease-in-out duration-700"
