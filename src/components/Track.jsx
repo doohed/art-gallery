@@ -39,6 +39,7 @@ const Track = () => {
     document.querySelector(".home").classList.remove("show");
     setTimeout(() => {
       window.location.assign(`/${count}`);
+      document.querySelector(".home").classList.add("show");
     }, "500");
   }
 

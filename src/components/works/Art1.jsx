@@ -16,11 +16,7 @@ const Container = styled.div`
 
 const Section = styled.div`
   display: flex;
-  
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-y: hidden;
-  overflow-x: scroll;
+  height: 100vh;
   @media (max-width: 820px) {
     display: inline;
   }
@@ -103,7 +99,7 @@ const Art1 = () => {
 
   const handleScroll = (event) => {
     setOldScroll(scrollAmount + oldScroll);
-    setContainer((document.getElementById("box").offsetWidth)/1.8 | 0);
+    setContainer((document.getElementById("box").offsetWidth)/2 | 0);
     console.log(container , oldScroll)
     setScrollAmount(event.deltaY);
     

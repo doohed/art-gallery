@@ -60,23 +60,23 @@ const Menu = () => {
         document.querySelector("#menu").classList.remove("show");
         break;
       case "/artwork":
-        document.querySelector("#work").classList.remove("show");
-        document.querySelector("#work").classList.remove("hide");
-
+        document.querySelector("#work").classList.remove("show", "hide");
         document.querySelector("#menu").classList.add("hide");
         document.querySelector("#menu").classList.remove("show");
         setTimeout(() => {
           window.location.assign("/");
+          document.querySelector("#work").classList.add("show", "hide");
+          document.querySelector("#menu").classList.add("show");
         }, "500");
         break;
       case "/info":
-        document.querySelector("#info").classList.remove("show");
-        document.querySelector("#info").classList.remove("hide");
-
+        document.querySelector("#info").classList.remove("show", "hide");
         document.querySelector("#menu").classList.add("hide");
         document.querySelector("#menu").classList.remove("show");
         setTimeout(() => {
           window.location.assign("/");
+          document.querySelector("#info").classList.add("show", "hide");
+          document.querySelector("#menu").classList.add("show");
         }, "500");
         break;
     }
@@ -85,13 +85,12 @@ const Menu = () => {
   function goToWorks() {
     switch (location) {
       case "/":
-        document.querySelector("#hero").classList.remove("show");
-        document.querySelector("#hero").classList.remove("hide");
-
+        document.querySelector("#hero").classList.remove("show", "hide");
         document.querySelector("#menu").classList.add("hide");
         document.querySelector("#menu").classList.remove("show");
         setTimeout(() => {
           window.location.assign("/artwork");
+          document.querySelector("#hero").classList.add("show", "hide");
         }, "500");
         break;
       case "/artwork":
@@ -99,49 +98,44 @@ const Menu = () => {
         document.querySelector("#menu").classList.remove("show");
         break;
       case "/info":
-        document.querySelector("#info").classList.remove("show");
-        document.querySelector("#info").classList.remove("hide");
-
+        document.querySelector("#info").classList.remove("show", "hide");
         document.querySelector("#menu").classList.add("hide");
         document.querySelector("#menu").classList.remove("show");
         setTimeout(() => {
           window.location.assign("/artwork");
+          document.querySelector("#info").classList.add("show", "hide");
         }, "500");
-        break
-      }
+        break;
+    }
   }
 
   function goToInfo() {
     switch (location) {
       case "/":
-        document.querySelector("#hero").classList.remove("show");
-        document.querySelector("#hero").classList.remove("hide");
-
+        document.querySelector("#hero").classList.remove("show", "hide");
         document.querySelector("#menu").classList.add("hide");
         document.querySelector("#menu").classList.remove("show");
         setTimeout(() => {
           window.location.assign("/info");
+          document.querySelector("#hero").classList.add("show", "hide");
         }, "500");
         break;
       case "/artwork":
-        document.querySelector("#work").classList.remove("show");
-        document.querySelector("#work").classList.remove("hide");
-
+        document.querySelector("#work").classList.remove("show", "hide");
         document.querySelector("#menu").classList.add("hide");
         document.querySelector("#menu").classList.remove("show");
 
         setTimeout(() => {
           window.location.assign("/info");
+          document.querySelector("#work").classList.add("show", "hide");
         }, "500");
         break;
       case "/info":
-       
-
         document.querySelector("#menu").classList.add("hide");
         document.querySelector("#menu").classList.remove("show");
-        
+
         break;
-      }
+    }
   }
 
   return (
@@ -166,7 +160,10 @@ const Menu = () => {
           >
             <h1>.WORK</h1>
           </a>
-          <a onClick={goToInfo} className="cursor-pointer ease-in-out duration-300">
+          <a
+            onClick={goToInfo}
+            className="cursor-pointer ease-in-out duration-300"
+          >
             <h1>.INFO</h1>
           </a>
         </List>

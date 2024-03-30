@@ -108,13 +108,6 @@ const Art2 = () => {
       setOldScroll(clientWidth);
     }
 
-    switch (oldScroll) {
-      case 0:
-        break;
-      case -clientWidth:
-        break;
-    }
-
     window.scrollTo({
       top: 0,
       left: oldScroll + scrollAmount,
