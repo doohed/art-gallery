@@ -164,7 +164,7 @@ const Menu = () => {
             onClick={goToWorks}
             className="cursor-pointer ease-in-out duration-300"
           >
-            <h1>.ARTWORK</h1>
+            <h1>.WORK</h1>
           </a>
           <a onClick={goToInfo} className="cursor-pointer ease-in-out duration-300">
             <h1>.INFO</h1>
