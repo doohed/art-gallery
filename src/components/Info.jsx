@@ -46,7 +46,7 @@ const Info = () => {
   setTimeout(() => {
     document.querySelector("#info").classList.remove("charge2");
     document.querySelector(".title").classList.remove("charge2");
-  }, 300);
+  }, 200);
 
   function open() {
     document.querySelector("#menu").classList.add("show");

@@ -1,9 +1,7 @@
 /* eslint-disable react/jsx-key */
 
 import styled from "styled-components";
-import { useState } from "react";
-import Art from "./Art";
-import { data } from "./mockData";
+
 
 const Container = styled.div`
   position: absolute;
