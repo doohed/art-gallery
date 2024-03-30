@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useLocation } from "react-router";
-import { useParams } from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -60,24 +59,10 @@ const Menu = () => {
         document.querySelector("#menu").classList.remove("show");
         break;
       case "/artwork":
-        document.querySelector("#work").classList.remove("show", "hide");
-        document.querySelector("#menu").classList.add("hide");
-        document.querySelector("#menu").classList.remove("show");
-        setTimeout(() => {
-          window.location.assign("/");
-        }, "800");
-        document.querySelector("#work").classList.add("show", "hide");
-        document.querySelector("#menu").classList.add("show");
+        window.location.assign("/");
         break;
       case "/info":
-        document.querySelector("#info").classList.remove("show", "hide");
-        document.querySelector("#menu").classList.add("hide");
-        document.querySelector("#menu").classList.remove("show");
-        setTimeout(() => {
-          window.location.assign("/");
-        }, "800");
-        document.querySelector("#info").classList.add("show", "hide");
-        document.querySelector("#menu").classList.add("show");
+        window.location.assign("/");
         break;
     }
   }
@@ -85,27 +70,14 @@ const Menu = () => {
   function goToWorks() {
     switch (location) {
       case "/":
-        document.querySelector("#hero").classList.remove("show");
-        document.querySelector("#hero").classList.remove("hide");
-        document.querySelector("#menu").classList.add("hide");
-        document.querySelector("#menu").classList.remove("show");
-        setTimeout(() => {
-          window.location.assign("/artwork");
-        }, "800");
-        document.querySelector("#hero").classList.add("show", "hide");
+        window.location.assign("/artwork");
         break;
       case "/artwork":
         document.querySelector("#menu").classList.add("hide");
         document.querySelector("#menu").classList.remove("show");
         break;
       case "/info":
-        document.querySelector("#info").classList.remove("show", "hide");
-        document.querySelector("#menu").classList.add("hide");
-        document.querySelector("#menu").classList.remove("show");
-        setTimeout(() => {
-          window.location.assign("/artwork");
-        }, "800");
-        document.querySelector("#info").classList.add("show", "hide");
+        window.location.assign("/artwork");
         break;
     }
   }
@@ -113,23 +85,10 @@ const Menu = () => {
   function goToInfo() {
     switch (location) {
       case "/":
-        document.querySelector("#hero").classList.remove("show","hide");
-        document.querySelector("#menu").classList.add("hide");
-        document.querySelector("#menu").classList.remove("show");
-        setTimeout(() => {
-          window.location.assign("/info");
-        }, "800");
-        document.querySelector("#hero").classList.add("show", "hide");
+        window.location.assign("/info");
         break;
       case "/artwork":
-        document.querySelector("#work").classList.remove("show", "hide");
-        document.querySelector("#menu").classList.add("hide");
-        document.querySelector("#menu").classList.remove("show");
-
-        setTimeout(() => {
-          window.location.assign("/info");
-        }, "800");
-        document.querySelector("#work").classList.add("show", "hide");
+        window.location.assign("/info");
         break;
       case "/info":
         document.querySelector("#menu").classList.add("hide");

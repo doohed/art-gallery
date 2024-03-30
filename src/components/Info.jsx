@@ -10,13 +10,6 @@ const Container = styled.div`
   filter: opacity(0);
 `;
 
-const Title = styled.div`
-  position: absolute;
-  cursor: pointer;
-  left: 5vw;
-  top: 40px;
-`;
-
 const Link = styled.a`
   rotate: 270deg;
   position: absolute;
