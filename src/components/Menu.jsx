@@ -70,14 +70,14 @@ const Menu = () => {
   function goToWorks() {
     switch (location) {
       case "/":
-        window.location.assign("/artwork");
+        window.location.assign("/works");
         break;
       case "/works":
         document.querySelector("#menu").classList.add("hide");
         document.querySelector("#menu").classList.remove("show");
         break;
       case "/info":
-        window.location.assign("/artwork");
+        window.location.assign("/works");
         break;
     }
   }
