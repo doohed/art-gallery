@@ -6,7 +6,7 @@ const Container = styled.div`
   position: absolute;
   top: 0px;
   left: 0px;
-  overflow: scroll;
+  overflow-x: scroll;
   filter: opacity(0);
   @media (max-width: 820px) {
     height: 100vh;
@@ -111,13 +111,15 @@ const Art1 = () => {
 
     if (oldScroll > container) {
       setOldScroll(container);
+      return;
+      
     }
-
-    window.scrollTo({
-      top: 0,
-      left: oldScroll + scrollAmount,
-      behavior: "smooth",
-    });
+    document.getElementById("box").style.transform = `translate(-${oldScroll + scrollAmount}px,0%)`
+    // window.scrollTo({
+    //   top: 0,
+    //   left: oldScroll + scrollAmount,
+    //   behavior: "smooth",
+    // });
   };
   function follow() {
     setTimeout(() => {
@@ -131,8 +133,8 @@ const Art1 = () => {
     }, "500");
   }
   return (
-    <Container id="art" className="hide show ">
-      <Section id="box" onWheel={handleScroll} className="">
+    <Container id="art" className="hide show">
+      <Section id="box" onWheel={handleScroll} className="ease-out duration-[.3s]">
         <Left>
           <Frame>
             <Image src={data[0].img} />
