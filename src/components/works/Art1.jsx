@@ -6,7 +6,7 @@ const Container = styled.div`
   position: absolute;
   top: 0px;
   left: 0px;
-  overflow-x: scroll;
+  overflow: scroll;
   filter: opacity(0);
   @media (max-width: 820px) {
     height: 100vh;
