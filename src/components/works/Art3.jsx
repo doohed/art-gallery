@@ -10,6 +10,8 @@ const Container = styled.div`
   filter: opacity(0);
   @media (max-width: 820px) {
     height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
   }
 `;
 
@@ -94,52 +96,39 @@ const Link = styled.a`
 const Art3 = () => {
   const [scrollAmount, setScrollAmount] = useState(0);
   const [oldScroll, setOldScroll] = useState(0);
-  const [clientWidth, setClientWidth] = useState(0);
+  const [container, setContainer] = useState(null);
 
   const handleScroll = (event) => {
     setOldScroll(scrollAmount + oldScroll);
+    setContainer((document.getElementById("box").offsetWidth / 2) | 0);
+    console.log(container, oldScroll);
     setScrollAmount(event.deltaY);
-    setClientWidth((document.getElementById("box").offsetWidth / 1.7) | 0);
-    
+
     if (oldScroll < 0) {
       setOldScroll(0);
     }
 
-    if (oldScroll > clientWidth) {
-      setOldScroll(clientWidth);
+    if (oldScroll > container) {
+      setOldScroll(container);
+      return;
     }
-
-
-    switch (oldScroll) {
-      case 0:
-        break;
-      case -clientWidth:
-        break;
-    }
-
-    window.scrollTo({
-      top: 0,
-      left: oldScroll + scrollAmount,
-      behavior: "smooth",
-    });
+    document.getElementById("box").style.transform = `translate(-${
+      oldScroll + scrollAmount
+    }px,0%)`;
   };
   function follow() {
-    setTimeout(() => {
-      window.location.assign("/4");
-    }, "500");
+    window.location.assign("/4");
   }
 
   function close() {
-    setTimeout(() => {
-      window.location.assign("/");
-    }, "500");
+    window.location.assign("/");
   }
   return (
     <Container id="art" className="hide show ">
       <Section
         id="box"
         onWheel={handleScroll}
-        className=""
+        className="ease-out duration-[.3s]"
       >
         <Left>
           <Frame>

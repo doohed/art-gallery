@@ -10,6 +10,8 @@ const Container = styled.div`
   filter: opacity(0);
   @media (max-width: 820px) {
     height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
   }
 `;
 
@@ -112,29 +114,25 @@ const Art1 = () => {
     if (oldScroll > container) {
       setOldScroll(container);
       return;
-      
     }
-    document.getElementById("box").style.transform = `translate(-${oldScroll + scrollAmount}px,0%)`
-    // window.scrollTo({
-    //   top: 0,
-    //   left: oldScroll + scrollAmount,
-    //   behavior: "smooth",
-    // });
+    document.getElementById("box").style.transform = `translate(-${
+      oldScroll + scrollAmount
+    }px,0%)`;
   };
   function follow() {
-    setTimeout(() => {
-      window.location.assign("/2");
-    }, "500");
+    window.location.assign("/2");
   }
 
   function close() {
-    setTimeout(() => {
-      window.location.assign("/");
-    }, "500");
+    window.location.assign("/");
   }
   return (
     <Container id="art" className="hide show">
-      <Section id="box" onWheel={handleScroll} className="ease-out duration-[.3s]">
+      <Section
+        id="box"
+        onWheel={handleScroll}
+        className="ease-out duration-[.3s]"
+      >
         <Left>
           <Frame>
             <Image src={data[0].img} />
