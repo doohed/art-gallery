@@ -6,8 +6,9 @@ const Container = styled.div`
   position: absolute;
   top: 0px;
   left: 0px;
-  overflow-x: scroll;
+  
   filter: opacity(0);
+  
   @media (max-width: 820px) {
     height: 100vh;
   }
@@ -15,7 +16,11 @@ const Container = styled.div`
 
 const Section = styled.div`
   display: flex;
-  height: 100vh;
+  
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-y: hidden;
+  overflow-x: scroll;
   @media (max-width: 820px) {
     display: inline;
   }
@@ -94,31 +99,26 @@ const Link = styled.a`
 const Art1 = () => {
   const [scrollAmount, setScrollAmount] = useState(0);
   const [oldScroll, setOldScroll] = useState(0);
-  const [clientWidth, setClientWidth] = useState(0);
+  const [ container, setContainer ] = useState(null);
 
   const handleScroll = (event) => {
     setOldScroll(scrollAmount + oldScroll);
+    setContainer((document.getElementById("box").offsetWidth)/1.8 | 0);
+    console.log(container , oldScroll)
     setScrollAmount(event.deltaY);
-    setClientWidth((document.getElementById("box").offsetWidth / 1.7) | 0);
+    
 
     if (oldScroll < 0) {
       setOldScroll(0);
     }
 
-    if (oldScroll > clientWidth) {
-      setOldScroll(clientWidth);
-    }
-
-    switch (oldScroll) {
-      case 0:
-        break;
-      case -clientWidth:
-        break;
+    if (oldScroll > container) {
+      setOldScroll(container);
     }
 
     window.scrollTo({
       top: 0,
-      left: oldScroll + scrollAmount,
+      left:  oldScroll + scrollAmount,
       behavior: "smooth",
     });
   };
