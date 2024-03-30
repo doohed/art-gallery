@@ -6,9 +6,8 @@ const Container = styled.div`
   position: absolute;
   top: 0px;
   left: 0px;
-
+  overflow-x: scroll;
   filter: opacity(0);
-
   @media (max-width: 820px) {
     height: 100vh;
   }
@@ -89,6 +88,9 @@ const Link = styled.a`
   @media (max-width: 820px) {
     top: 8px;
     rotate: 0deg;
+    left: 20px;
+    bottom: 0;
+    margin-bottom: 0;
   }
 `;
 

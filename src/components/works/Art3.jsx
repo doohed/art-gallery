@@ -124,16 +124,12 @@ const Art3 = () => {
     });
   };
   function follow() {
-    document.querySelector("#art").classList.remove("show");
-
     setTimeout(() => {
       window.location.assign("/4");
     }, "500");
   }
 
   function close() {
-    document.querySelector("#art").classList.remove("show");
-
     setTimeout(() => {
       window.location.assign("/");
     }, "500");

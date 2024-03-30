@@ -123,16 +123,12 @@ const Art6 = () => {
     });
   };
   function follow() {
-    document.querySelector("#art").classList.remove("show");
-
     setTimeout(() => {
       window.location.assign("/7");
     }, "500");
   }
 
   function close() {
-    document.querySelector("#art").classList.remove("show");
-
     setTimeout(() => {
       window.location.assign("/");
     }, "500");

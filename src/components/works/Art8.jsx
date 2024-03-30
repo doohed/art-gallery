@@ -125,16 +125,12 @@ const Art8 = () => {
     });
   };
   function follow() {
-    document.querySelector("#art").classList.remove("show");
-
     setTimeout(() => {
       window.location.assign("/9");
     }, "500");
   }
 
   function close() {
-    document.querySelector("#art").classList.remove("show");
-
     setTimeout(() => {
       window.location.assign("/");
     }, "500");
