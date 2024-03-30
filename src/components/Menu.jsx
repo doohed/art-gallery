@@ -65,9 +65,9 @@ const Menu = () => {
         document.querySelector("#menu").classList.remove("show");
         setTimeout(() => {
           window.location.assign("/");
-          document.querySelector("#work").classList.add("show", "hide");
-          document.querySelector("#menu").classList.add("show");
-        }, "400");
+        }, "800");
+        document.querySelector("#work").classList.add("show", "hide");
+        document.querySelector("#menu").classList.add("show");
         break;
       case "/info":
         document.querySelector("#info").classList.remove("show", "hide");
@@ -75,9 +75,9 @@ const Menu = () => {
         document.querySelector("#menu").classList.remove("show");
         setTimeout(() => {
           window.location.assign("/");
-          document.querySelector("#info").classList.add("show", "hide");
-          document.querySelector("#menu").classList.add("show");
-        }, "400");
+        }, "800");
+        document.querySelector("#info").classList.add("show", "hide");
+        document.querySelector("#menu").classList.add("show");
         break;
     }
   }
@@ -85,13 +85,14 @@ const Menu = () => {
   function goToWorks() {
     switch (location) {
       case "/":
-        document.querySelector("#hero").classList.remove("show", "hide");
+        document.querySelector("#hero").classList.remove("show");
+        document.querySelector("#hero").classList.remove("hide");
         document.querySelector("#menu").classList.add("hide");
         document.querySelector("#menu").classList.remove("show");
         setTimeout(() => {
           window.location.assign("/artwork");
-          document.querySelector("#hero").classList.add("show", "hide");
-        }, "400");
+        }, "800");
+        document.querySelector("#hero").classList.add("show", "hide");
         break;
       case "/artwork":
         document.querySelector("#menu").classList.add("hide");
@@ -103,8 +104,8 @@ const Menu = () => {
         document.querySelector("#menu").classList.remove("show");
         setTimeout(() => {
           window.location.assign("/artwork");
-          document.querySelector("#info").classList.add("show", "hide");
-        }, "400");
+        }, "800");
+        document.querySelector("#info").classList.add("show", "hide");
         break;
     }
   }
@@ -112,13 +113,13 @@ const Menu = () => {
   function goToInfo() {
     switch (location) {
       case "/":
-        document.querySelector("#hero").classList.remove("show", "hide");
+        document.querySelector("#hero").classList.remove("show","hide");
         document.querySelector("#menu").classList.add("hide");
         document.querySelector("#menu").classList.remove("show");
         setTimeout(() => {
           window.location.assign("/info");
-          document.querySelector("#hero").classList.add("show", "hide");
-        }, "400");
+        }, "800");
+        document.querySelector("#hero").classList.add("show", "hide");
         break;
       case "/artwork":
         document.querySelector("#work").classList.remove("show", "hide");
@@ -127,8 +128,8 @@ const Menu = () => {
 
         setTimeout(() => {
           window.location.assign("/info");
-          document.querySelector("#work").classList.add("show", "hide");
-        }, "400");
+        }, "800");
+        document.querySelector("#work").classList.add("show", "hide");
         break;
       case "/info":
         document.querySelector("#menu").classList.add("hide");
