@@ -6,9 +6,9 @@ const Container = styled.div`
   position: absolute;
   top: 0px;
   left: 0px;
-  
+
   filter: opacity(0);
-  
+
   @media (max-width: 820px) {
     height: 100vh;
   }
@@ -95,14 +95,13 @@ const Link = styled.a`
 const Art1 = () => {
   const [scrollAmount, setScrollAmount] = useState(0);
   const [oldScroll, setOldScroll] = useState(0);
-  const [ container, setContainer ] = useState(null);
+  const [container, setContainer] = useState(null);
 
   const handleScroll = (event) => {
     setOldScroll(scrollAmount + oldScroll);
-    setContainer((document.getElementById("box").offsetWidth)/2 | 0);
-    console.log(container , oldScroll)
+    setContainer((document.getElementById("box").offsetWidth / 2) | 0);
+    console.log(container, oldScroll);
     setScrollAmount(event.deltaY);
-    
 
     if (oldScroll < 0) {
       setOldScroll(0);
@@ -114,32 +113,24 @@ const Art1 = () => {
 
     window.scrollTo({
       top: 0,
-      left:  oldScroll + scrollAmount,
+      left: oldScroll + scrollAmount,
       behavior: "smooth",
     });
   };
   function follow() {
-    document.querySelector("#art").classList.remove("show");
-
     setTimeout(() => {
       window.location.assign("/2");
     }, "500");
   }
 
   function close() {
-    document.querySelector("#art").classList.remove("show");
-
     setTimeout(() => {
       window.location.assign("/");
     }, "500");
   }
   return (
     <Container id="art" className="hide show ">
-      <Section
-        id="box"
-        onWheel={handleScroll}
-        className=""
-      >
+      <Section id="box" onWheel={handleScroll} className="">
         <Left>
           <Frame>
             <Image src={data[0].img} />

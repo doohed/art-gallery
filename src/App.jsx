@@ -28,7 +28,7 @@ function App() {
       <Container>
         <Routes>
           <Route path="/" element={<Hero />} />
-          <Route path="artwork" element={<Work />} />
+          <Route path="works" element={<Work />} />
           <Route path="info" element={<Info />} />
           <Route path="1" element={<Art1 />} />
           <Route path="2" element={<Art2 />} />

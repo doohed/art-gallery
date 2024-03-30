@@ -58,7 +58,7 @@ const Menu = () => {
         document.querySelector("#menu").classList.add("hide");
         document.querySelector("#menu").classList.remove("show");
         break;
-      case "/artwork":
+      case "/works":
         window.location.assign("/");
         break;
       case "/info":
@@ -72,7 +72,7 @@ const Menu = () => {
       case "/":
         window.location.assign("/artwork");
         break;
-      case "/artwork":
+      case "/works":
         document.querySelector("#menu").classList.add("hide");
         document.querySelector("#menu").classList.remove("show");
         break;
@@ -87,13 +87,12 @@ const Menu = () => {
       case "/":
         window.location.assign("/info");
         break;
-      case "/artwork":
+      case "/works":
         window.location.assign("/info");
         break;
       case "/info":
         document.querySelector("#menu").classList.add("hide");
         document.querySelector("#menu").classList.remove("show");
-
         break;
     }
   }
