@@ -39,8 +39,8 @@ const Track = () => {
     document.querySelector(".home").classList.remove("show");
     setTimeout(() => {
       window.location.assign(`/${count}`);
-      document.querySelector(".home").classList.add("show");
-    }, "200");
+    }, "300");
+    document.querySelector(".home").classList.add("show");
   }
 
   return (
@@ -49,7 +49,7 @@ const Track = () => {
         <a key={`image ` + item.id} draggable="false">
           <Image
             id="album"
-            onClick={()=> (gallery(item.id))}
+            onClick={() => gallery(item.id)}
             className=" hover:grayscale-0 hover:scale-125 ease-in-out duration-500"
             src={item.img}
             draggable="false"
